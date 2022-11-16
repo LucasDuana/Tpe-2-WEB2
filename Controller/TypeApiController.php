@@ -22,12 +22,28 @@
         }
         
         public function getTypes($params=null){
-            
+            if ((isset($_GET["order"]) && isset($_GET["atribute"]))){
+                $order=$_GET["order"];
+                $atribute=$_GET["atribute"];
+                if (in_array($atribute,$this->atributes)){
+                    if ($order==="asc"){
+                        $types=$this->model->typesOrderAsc($atribute);
+                        return $this->view->response($types,200);
+                    }
+                    else {
+                        if ($order==="desc"){
+                        $types=$this->model->typesOrderDesc($atribute);
+                        return $this->view->response($types,200);
+                        }
+                    }
+                }
+            }
             $types=$this->model->getCategories();
             if($types)
                 return $this->view->response($types,200);  
             else 
                 return $this->view->response("No content",204);
+            
         }
 
         private function typeExist($id){ // verifica si existe la categoria

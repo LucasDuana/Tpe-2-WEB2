@@ -45,5 +45,19 @@
             $query->execute(array($name,$summary,$id));
         }
 
+        public function typesOrderAsc($col){
+            $query = $this->db->prepare("SELECT * FROM tipo ORDER BY $col ASC");
+            $query->execute();
+            $types = $query->fetchall(PDO::FETCH_OBJ);
+            return $types;
+        }
+
+        public function typesOrderDesc($col){
+            $query = $this->db->prepare("SELECT * FROM tipo ORDER BY $col DESC");
+            $query->execute();
+            $types = $query->fetchall(PDO::FETCH_OBJ);
+            return $types;
+        }
+
 
     }
