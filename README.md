@@ -5,6 +5,7 @@ ENDPOINTS Beer(item)
 
 (GET) /api/beer Devuelve todas las cervezas
 (GET) /api/beer/:ID Devuelve una cerveza en especifico
+(GET) /api/beer/
 
 
 
