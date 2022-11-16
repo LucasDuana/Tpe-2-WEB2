@@ -32,23 +32,22 @@
             if ((isset($_GET["order"]) && isset($_GET["atribute"]))){
                 $order=$_GET["order"];
                 $atribute=$_GET["atribute"];
-                if ($this->columnExists($atribute)){
-                    if ($order=="asc"){
+                if (in_array($atribute,$this->atributes)){
+                    if ($order==="asc"){
                         $beers=$this->model->beersOrderAsc($atribute);
                         return $this->view->response($beers,200);
                     }
-                }
                     else {
-                        if ($order=="desc"){
+                        if ($order==="desc"){
                         $beers=$this->model->beersOrderDesc($atribute);
                         return $this->view->response($beers,200);
-                    }
-                }
-                
-            }
+                        }
+                    }  
+                }  
             $beers = $this->model->getBeersC();
             return $this->view->response($beers,200);
         }
+    }
 
         public function getBeer($params=null){ //retorna una cervezaen especifica
             $id=$params[":ID"];

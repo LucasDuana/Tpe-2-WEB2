@@ -9,7 +9,7 @@
         }
 
         public function getBeersC(){
-            $query=$this->db->prepare("SELECT * FROM cerveza LEFT JOIN tipo ON cerveza.idtipo = tipo.id_tipo ORDER BY precio");
+            $query=$this->db->prepare("SELECT * FROM cerveza LEFT JOIN tipo ON cerveza.idtipo = tipo.id_tipo ");
             $query->execute();
             $beers= $query->fetchAll(PDO::FETCH_OBJ);
             return $beers;
@@ -39,16 +39,16 @@
         }
 
         public function beersOrderAsc($col){
-            $query=$this->db->prepare("SELECT * FROM cerveza ORDER BY $col ASC ");
+            $query = $this->db->prepare("SELECT * FROM cerveza ORDER BY $col ASC");
             $query->execute();
-            $beers=$query->fetchAll(PDO::OBJ_FETCH);
+            $beers = $query->fetchall(PDO::FETCH_OBJ);
             return $beers;
         }
 
         public function beersOrderDesc($col){
-            $query=$this->db->prepare("SELECT * FROM cerveza ORDER BY $col DESC ");
+            $query = $this->db->prepare("SELECT * FROM cerveza ORDER BY $col DESC");
             $query->execute();
-            $beers=$query->fetchAll(PDO::OBJ_FETCH);
+            $beers = $query->fetchall(PDO::FETCH_OBJ);
             return $beers;
         }
 
