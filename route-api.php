@@ -36,4 +36,4 @@
 
     //rutea
     $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);
-    
+  
