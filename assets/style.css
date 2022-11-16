@@ -1,0 +1,30 @@
+.botoncito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-group{
+    width: 70%;
+    margin-left:15%;
+    margin-right: 15%;
+}
+
+.containerform{
+    width: 70%;
+    margin-left:15%;
+    margin-right: 15%;
+
+}
+
+#botonadd{
+    margin-top:10px;
+}
+
+form{
+    margin-top: 50px;
+    width:70% ;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
