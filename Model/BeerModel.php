@@ -9,7 +9,7 @@
         }
 
         public function getBeersC(){
-            $query=$this->db->prepare("SELECT * FROM cerveza LEFT JOIN tipo ON cerveza.idtipo = tipo.id_tipo ");
+            $query=$this->db->prepare("SELECT * FROM cerveza LEFT JOIN tipo ON cerveza.idtipo = tipo.id_tipo ORDER BY precio");
             $query->execute();
             $beers= $query->fetchAll(PDO::FETCH_OBJ);
             return $beers;
