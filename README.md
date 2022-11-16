@@ -5,7 +5,8 @@ ENDPOINTS Beer(item)
 
 (GET) /api/beer Devuelve todas las cervezas
 (GET) /api/beer/:ID Devuelve una cerveza en especifico
-(GET) /api/beer/
+
+
 
 (POST) /api/beer Crea una cerveza
 	
@@ -34,6 +35,8 @@ ENDPOINTS Type(categoria)
         	"descripcion": "Del mundo a tu paladar, las cervezas de alrededor del globo."
 		}
 	actualiza el nombre de tipo con id 4 a "EDITADA"
+
+en caso de ordenar,usar URL para get,las variables "order" y "atribute"
 
 
 
